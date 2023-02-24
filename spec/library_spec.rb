@@ -35,8 +35,8 @@ RSpec.describe Library do
       villette = charlotte_bronte.write("Villette", "October 12, 1853")
       james_corey = Author.new({first_name: "James", last_name: "Corey"})
       leviathan_wakes = james_corey.write("Leviathan Wakes", "June 15, 2011")
-      nemesis_games = james_corey.write("Nemesis Games", "June 2, 2015")
       leviathan_falls = james_corey.write("Leviathan Falls", "November 30, 2021")
+      nemesis_games = james_corey.write("Nemesis Games", "June 2, 2015")
 
       expect(library.publication_time_frame_for(charlotte_bronte)).to eq({:start=>"1847", :end=>"1853"})
       expect(library.publication_time_frame_for(james_corey)).to eq({:start=>"2011", :end=>"2021"})

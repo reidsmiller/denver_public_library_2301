@@ -17,10 +17,10 @@ class Library
     author.books.each {|book| publication_years << book.publication_year}
     publication_years_i = []
     publication_years.each {|year| publication_years_i << year.to_i}
-    publication_years.sort!
+    publication_years_i.sort!
     time_frame = {
-      start: publication_years.first.to_s,
-      end: publication_years.last.to_s
+      start: publication_years_i.first.to_s,
+      end: publication_years_i.last.to_s
     }
   end
 end

@@ -7,4 +7,13 @@ class Book
     @title = book_info[:title]
     @publication_date = book_info[:publication_date]
   end
+
+  def author
+    author = author_first_name + (' ') + author_last_name
+  end
+
+  def publication_year
+    arr = @publication_date.split(' ')
+    arr[2]
+  end
 end

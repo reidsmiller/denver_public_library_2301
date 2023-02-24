@@ -22,6 +22,7 @@ RSpec.describe Library do
 
 
       library.add_author(charlotte_bronte)
+      library.add_author(james_corey)
 
       expect(library.authors).to eq([charlotte_bronte, james_corey])
       expect(library.books).to eq([jane_eyre, villette, leviathan_wakes, nemesis_games, leviathan_falls])

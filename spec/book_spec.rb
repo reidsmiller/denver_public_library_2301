@@ -11,4 +11,16 @@ RSpec.describe Book do
       expect(book.publication_date).to eq("July 11, 1960")
     end
   end
+
+  it 'can find author entire name' do
+    book = Book.new({author_first_name: "Harper", author_last_name: "Lee", title: "To Kill a Mockingbird", publication_date: "July 11, 1960"})
+
+    expect(book.author).to eq("Harper Lee")
+  end
+
+  it 'can find publication year' do
+    book = Book.new({author_first_name: "Harper", author_last_name: "Lee", title: "To Kill a Mockingbird", publication_date: "July 11, 1960"})
+
+    exect(book.publication_year).to eq("1960")
+  end
 end

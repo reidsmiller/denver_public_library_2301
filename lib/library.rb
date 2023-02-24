@@ -1,5 +1,5 @@
 class Library
-  attr_reader :name, :books, :authors
+  attr_reader :name, :books, :authors, :books_checked_out
 
   def initialize(name)
     @name = name
@@ -26,7 +26,22 @@ class Library
   end
 
   def checkout(book)
-    @books_checked_out << book
-    book.checkouts += 1
+    if book.checked_out == false
+      @books_checked_out << book
+      book.checked_out = true
+      book.checkouts += 1
+      return true
+    else
+      false
+    end
+  end
+
+  def return(return_book)
+    @books_checked_out.delete(return_book)
+    book.checked_out = false
+  end
+
+  def most_checked_out
+    @books.max_by {|book| book.checkouts}
   end
 end

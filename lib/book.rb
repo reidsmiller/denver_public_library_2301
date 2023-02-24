@@ -7,6 +7,7 @@ class Book
     @author_last_name = book_info[:author_last_name]
     @title = book_info[:title]
     @publication_date = book_info[:publication_date]
+    @checked_out = false
     @checkouts = 0
   end
 

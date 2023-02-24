@@ -5,6 +5,7 @@ class Library
     @name = name
     @books = []
     @authors = []
+    @books_checked_out = []
   end
 
   def add_author(author)
@@ -22,5 +23,10 @@ class Library
       start: publication_years_i.first.to_s,
       end: publication_years_i.last.to_s
     }
+  end
+
+  def checkout(book)
+    @books_checked_out << book
+    book.checkouts += 1
   end
 end
